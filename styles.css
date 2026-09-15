@@ -86,13 +86,14 @@ button { font: inherit; }
 
 .hero {
   min-height: calc(100vh - var(--header));
-  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr); gap: 70px;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px;
   align-items: center; padding-top: 70px; padding-bottom: 70px;
 }
 .eyebrow {
   margin: 0 0 14px; font-size: .76rem; font-weight: 780; letter-spacing: .16em;
   text-transform: uppercase; color: var(--accent-strong);
 }
+.hero-copy { max-width: 1050px; }
 .hero h1 {
   margin: 0; max-width: 850px; font-size: clamp(3.5rem, 8vw, 7.2rem); line-height: .92;
   letter-spacing: -.065em; font-weight: 780;
@@ -111,34 +112,8 @@ button { font: inherit; }
 .hero-meta span { position: relative; }
 .hero-meta span:not(:last-child)::after { content: "•"; position: absolute; right: -12px; color: var(--accent); }
 
-.hero-panel {
-  min-height: 520px; position: relative; overflow: hidden; border: 1px solid var(--line);
-  border-radius: 30px; background: var(--surface); padding: 34px; box-shadow: var(--shadow);
-  display: flex; flex-direction: column; justify-content: flex-end;
-}
-.blueprint-grid {
-  position: absolute; inset: 0; opacity: .5;
-  background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 34px 34px;
-  mask-image: linear-gradient(to bottom, #000 25%, transparent 82%);
-}
-.hero-panel::after {
-  content: ""; position: absolute; width: 270px; height: 270px; right: -80px; top: -70px;
-  border: 50px solid var(--accent-soft); border-radius: 50%; opacity: .75;
-}
-.profile-monogram {
-  position: absolute; top: 34px; left: 34px; z-index: 2; width: 92px; height: 92px;
-  display: grid; place-items: center; border-radius: 24px; background: var(--ink); color: var(--bg);
-  font-size: 2rem; font-weight: 820; letter-spacing: -.04em;
-}
-.panel-kicker { position: relative; z-index: 1; margin: 0 0 6px; color: var(--muted); font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
-.hero-panel h2 { position: relative; z-index: 1; margin: 0; font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: 1.04; letter-spacing: -.04em; }
-.profile-stats { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 28px 0 24px; }
-.profile-stats div { padding: 14px 16px; background: color-mix(in srgb, var(--surface-2) 70%, transparent); border: 1px solid var(--line); border-radius: 14px; }
-.profile-stats strong { display: block; font-size: 1.4rem; line-height: 1; }
-.profile-stats span { display: block; margin-top: 6px; font-size: .76rem; color: var(--muted); }
-.panel-tags, .tag-row { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 7px; }
-.panel-tags span, .tag-row span {
+.tag-row { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 7px; }
+.tag-row span {
   border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 88%, transparent);
   color: var(--muted); border-radius: 999px; padding: 6px 10px; font-size: .72rem; font-weight: 700;
 }
@@ -242,7 +217,6 @@ button { font: inherit; }
 
 @media (max-width: 940px) {
   .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 80px; }
-  .hero-panel { min-height: 430px; }
   .section-heading { grid-template-columns: 1fr; gap: 18px; align-items: start; }
   .text-link, .education-mini { justify-self: start; text-align: left; }
   .project-card, .project-card:nth-child(1), .project-card:nth-child(2) { grid-column: span 6; }
@@ -258,7 +232,6 @@ button { font: inherit; }
   .theme-toggle { width: 36px; height: 36px; }
   .hero { gap: 28px; }
   .hero h1 { font-size: clamp(3.1rem, 15vw, 5.2rem); }
-  .hero-panel { min-height: 380px; }
   .project-card, .project-card:nth-child(1), .project-card:nth-child(2) { grid-column: 1 / -1; }
   .timeline-item { grid-template-columns: 1fr; gap: 8px; }
   .course-grid, .skills-grid { grid-template-columns: 1fr; }
