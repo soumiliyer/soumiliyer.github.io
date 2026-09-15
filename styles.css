@@ -290,3 +290,14 @@ button { font: inherit; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Deep-link targets from resumes */
+.timeline-item, .project-card { scroll-margin-top: 7rem; }
+
+
+/* Direct links from resume */
+.deep-link-target {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  transition: outline-color .4s ease, outline-offset .4s ease;
+}

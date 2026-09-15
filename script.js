@@ -194,6 +194,7 @@ function renderProjects(filter = 'all') {
     const visible = filter === 'all' || project.categories.includes(filter);
     const card = document.createElement('article');
     card.className = 'project-card reveal';
+    card.id = `project-${project.id}`;
     card.hidden = !visible;
     card.tabIndex = 0;
     card.setAttribute('role', 'button');
@@ -290,6 +291,48 @@ function initReveals() {
   document.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
 }
 
+function handleDeepLink() {
+  const params = new URLSearchParams(window.location.search);
+  let target = params.get('view');
+
+  // Backward compatibility with the earlier #experience-* and #project-* links.
+  if (!target && window.location.hash) target = window.location.hash.slice(1);
+  if (!target) return;
+
+  if (target.startsWith('experience-')) {
+    const experience = document.getElementById(target);
+    if (!experience) return;
+    // A short delay makes the jump reliable after fonts/layout finish loading.
+    setTimeout(() => {
+      experience.scrollIntoView({ behavior: 'auto', block: 'center' });
+      experience.classList.add('deep-link-target');
+      setTimeout(() => experience.classList.remove('deep-link-target'), 1800);
+    }, 80);
+    return;
+  }
+
+  if (target.startsWith('project-')) {
+    const projectId = target.slice('project-'.length);
+    const project = projects.find(item => item.id === projectId);
+    if (!project) return;
+
+    filters.forEach(item => item.classList.toggle('active', item.dataset.filter === 'all'));
+    renderProjects('all');
+    setTimeout(() => {
+      const card = document.getElementById(`project-${projectId}`);
+      if (card) {
+        card.scrollIntoView({ behavior: 'auto', block: 'center' });
+        card.classList.add('deep-link-target');
+        setTimeout(() => card.classList.remove('deep-link-target'), 1800);
+      }
+      if (!modal.open) openProject(project);
+    }, 80);
+  }
+}
+
 document.getElementById('year').textContent = new Date().getFullYear();
 renderProjects();
 initReveals();
+handleDeepLink();
+window.addEventListener('hashchange', handleDeepLink);
+window.addEventListener('popstate', handleDeepLink);
