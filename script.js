@@ -1,180 +1,425 @@
 const projects = [
   {
-    id: 'solder-doe',
-    title: 'Lead-Free Solder Joint Process Optimization',
-    course: 'IE 533 · Industrial Applications of Statistics',
-    categories: ['manufacturing', 'data'],
-    label: 'Process Engineering / DOE',
-    summary: 'Designed a randomized 2³ factorial experiment in Minitab to quantify how soldering temperature, paste volume, and cooling rate affect SAC305 joint shear strength.',
-    tags: ['DOE', 'Minitab', 'ANOVA/GLM', 'Process Optimization', 'Quality'],
-    metrics: [['16', 'simulated runs'], ['0.83', 'statistical power'], ['p = 0.006', 'overall model'], ['3', 'significant main effects']],
-    methods: [
-      'Created a randomized 2³ full-factorial design with two replicates per treatment combination while holding nuisance factors constant.',
-      'Performed power analysis at α = 0.05 using a 5 N/mm² minimum detectable effect and 3 N/mm² within-cell standard deviation.',
-      'Fit a general linear model / ANOVA and used Pareto, main-effects, interaction, and four-in-one residual plots to test assumptions and quantify factor effects.',
-      'Recommended 260 °C, 1.0 mg solder paste, and 4 °C/s cooling from the simulated process model.'
+    "id": "solder-doe",
+    "title": "Lead-Free Solder Joint Process Optimization",
+    "course": "IE 533 · Industrial Applications of Statistics",
+    "categories": [
+      "manufacturing",
+      "data"
     ],
-    takeaway: 'A manufacturing-quality project that connects experimental design, statistics, process windows, and data-backed engineering decisions. The study used simulated data, which is explicitly documented in the report.',
-    report: 'docs/IE533_Solder_DOE_Report.pdf'
+    "label": "Process Engineering / DOE",
+    "summary": "Designed a randomized 2³ factorial experiment in Minitab to quantify how soldering temperature, paste volume, and cooling rate affect SAC305 joint shear strength.",
+    "tags": [
+      "DOE",
+      "Minitab",
+      "ANOVA/GLM",
+      "Process Optimization",
+      "Quality"
+    ],
+    "metrics": [
+      [
+        "16",
+        "simulated runs"
+      ],
+      [
+        "0.83",
+        "statistical power"
+      ],
+      [
+        "p = 0.006",
+        "overall model"
+      ],
+      [
+        "3",
+        "significant main effects"
+      ]
+    ],
+    "details": [
+      "I developed a statistical process-optimization study for SAC305 lead-free solder, an alloy consisting of 96.5% Sn, 3.0% Ag, and 0.5% Cu, to determine how reflow-process parameters influence solder-joint shear strength. I selected three controllable factors based on the physical soldering process: soldering temperature at 230°C and 260°C, solder-paste volume at 0.5 mg and 1.0 mg, and post-solder cooling rate at 1°C/s and 4°C/s. I used a fully crossed 2³ factorial design, creating 8 unique treatment combinations, and specified two replicates per combination for 16 total runs. Alloy, PCB/pad geometry, ambient conditions, equipment, and a 120°C preheat temperature were held constant, while the 16-run order was randomized in Minitab to prevent time-dependent nuisance effects from becoming confounded with any factor.",
+      "Before analyzing the response, I performed a power analysis at α = 0.05, assuming a 5 N/mm² minimum detectable effect and a 3 N/mm² within-cell standard deviation; the two-replicate design produced approximately 0.83 statistical power. I then fit a general linear model/ANOVA. The overall model was significant at p = 0.006; all three main effects were significant while the interactions were not. The modeled effects were approximately +6.90 N/mm² for temperature, +5.459 N/mm² for cooling rate, and +3.364 N/mm² for paste volume, and the factorial structure produced VIF = 1.00, confirming orthogonality. I used Pareto charts, main-effects plots, interaction plots, and four-in-one residual diagnostics to check the model before recommending the modeled high-setting combination of 260°C, 1.0 mg, and 4°C/s. The project used simulated data, which I explicitly documented rather than presenting the study as a physically conducted soldering experiment."
+    ],
+    "takeaway": "This project connects experimental design, statistical validation, process windows, and data-backed manufacturing decisions while being explicit about the use of simulated data.",
+    "report": "docs/IE533_Solder_DOE_Report.pdf"
   },
   {
-    id: 'senior-design',
-    title: 'Assisted Eating Utensil',
-    course: 'Mechanical Engineering Senior Design',
-    categories: ['design', 'manufacturing'],
-    label: 'Product Design / Prototyping',
-    summary: 'Developed a low-cost passive stabilization utensil for users affected by hand tremors, iterating from user needs through CAD, prototyping, and validation.',
-    tags: ['Product Design', 'CAD', '3D Printing', 'DFM', 'Validation'],
-    metrics: [['< $25', 'prototype cost'], ['2 m', 'drop validation'], ['Passive', 'stabilization'], ['User-led', 'design iteration']],
-    methods: [
-      'Translated user needs into design requirements and evaluated concepts for stabilization, usability, manufacturability, and cost.',
-      'Implemented a bearing-based passive mechanism that allowed the utensil head to self-level while preserving normal scooping motion.',
-      'Iterated CAD and 3D-printed prototypes, adding grip geometry, retention straps, and a detachable stainless-steel spoon head.',
-      'Validated durability with 2 m drop tests, dishwasher cycles, and insertion/removal-force checks.'
+    "id": "senior-design",
+    "title": "Assisted Eating Utensil",
+    "course": "Mechanical Engineering Senior Design",
+    "categories": [
+      "design",
+      "manufacturing"
     ],
-    takeaway: 'This project demonstrates end-to-end product development: requirements, mechanism design, CAD, prototyping, design iteration, validation, and cost control.',
-    report: null
+    "label": "Product Design / Prototyping",
+    "summary": "Developed a low-cost passive stabilization utensil for users affected by hand tremors, iterating from user needs through CAD, prototyping, and validation.",
+    "tags": [
+      "Product Design",
+      "CAD",
+      "3D Printing",
+      "DFM",
+      "Validation"
+    ],
+    "metrics": [
+      [
+        "< $25",
+        "prototype cost"
+      ],
+      [
+        "2 m",
+        "drop validation"
+      ],
+      [
+        "Passive",
+        "stabilization"
+      ],
+      [
+        "User-led",
+        "design iteration"
+      ]
+    ],
+    "details": [
+      "My senior-design team developed a mechanically stabilized eating utensil for users whose hand tremors make conventional utensils difficult to control. We began by converting user needs—stability, comfort, ease of cleaning, manufacturability, and affordability—into engineering requirements and explored ways to reduce tremor-induced motion without relying on expensive motors or electronics. The final architecture used a bearing-based passive self-leveling mechanism, allowing the spoon head to rotate relative to the user’s hand so that transient hand motion could be damped while normal scooping behavior was retained.",
+      "The design was iterated through CAD models and 3D-printed prototypes rather than treated as a single final concept. User feedback led to an enlarged ribbed grip for better control, a retention strap, and a detachable stainless-steel spoon head. We then validated the physical prototype through 2 m drop tests, repeated dishwasher exposure, and insertion/removal-force testing of the detachable interface to make sure the usability changes had not compromised durability. The resulting prototype remained functional while staying below a $25 target cost, providing a substantially lower-cost mechanical alternative to commercially available electronic stabilization products."
+    ],
+    "takeaway": "A full product-development cycle: user requirements, mechanism selection, CAD, rapid prototyping, iterative refinement, durability testing, usability validation, and cost control.",
+    "report": null
   },
   {
-    id: 'robot-control',
-    title: 'Autonomous Robot Control & Line Following',
-    course: 'ME 375 · Measurement & Control Systems II',
-    categories: ['controls', 'data'],
-    label: 'Controls / Robotics',
-    summary: 'Built and tuned a closed-loop differential-drive robot that followed an unknown track for two laps and autonomously parked 30 cm from a wall.',
-    tags: ['MATLAB', 'Simulink', 'PID/PI', 'Root Locus', 'Sensors', 'System ID'],
-    metrics: [['2', 'autonomous laps'], ['30 cm', 'parking target'], ['< 0.5 cm', 'IR error'], ['~5.13 in/s', '100% PWM speed']],
-    methods: [
-      'Characterized motor/gearbox/encoder dynamics and fitted first-order models from measured pulse-response data.',
-      'Calibrated infrared and line-following sensors and converted encoder counts into distance/speed feedback.',
-      'Implemented finite-state logic for rest, racing, line recovery, and parking with nested PID/PI control loops.',
-      'Personally developed the motor speed-difference controller using root-locus techniques in MATLAB.'
+    "id": "robot-control",
+    "title": "Autonomous Robot Control & Line Following",
+    "course": "ME 375 · Measurement & Control Systems II",
+    "categories": [
+      "controls",
+      "data"
     ],
-    takeaway: 'A complete controls workflow from hardware characterization and sensor calibration to system identification, controller design, simulation, integration, and testing.',
-    report: 'docs/ME375_Autonomous_Robot_Report.pdf'
+    "label": "Controls / Robotics",
+    "summary": "Built and tuned a closed-loop differential-drive robot that followed an unknown track for two laps and autonomously parked 30 cm from a wall.",
+    "tags": [
+      "MATLAB",
+      "Simulink",
+      "PID/PI",
+      "Root Locus",
+      "Sensors",
+      "System ID"
+    ],
+    "metrics": [
+      [
+        "2",
+        "autonomous laps"
+      ],
+      [
+        "30 cm",
+        "parking target"
+      ],
+      [
+        "< 0.5 cm",
+        "IR error"
+      ],
+      [
+        "~5.13 in/s",
+        "100% PWM speed"
+      ]
+    ],
+    "details": [
+      "Our team developed a differential-drive robot that had to autonomously follow an unknown track for two laps, with a target completion time of 30 seconds, and then stop 30 cm from a wall. Rather than tuning a controller blindly, we first characterized the physical subsystems. The two motor/gearbox/encoder assemblies produced approximately 200 and 195 encoder counts per revolution, corresponding to roughly 38 counts per inch of robot travel. The infrared distance sensor was calibrated across its 10–80 cm range and showed less than 0.5 cm error, while the three-channel line-following sensor was mapped from voltage output to lateral track position.",
+      "Motor pulse testing showed that the drive systems could be approximated as first-order plants with static gains of 14.375 and 14.95 and time constants of approximately 0.10 s and 0.08 s. At 100% PWM, measured wheel speed was approximately 5.13 in/s. We also identified static-friction nonlinearities and implemented friction compensation with deadbands of approximately 0.256296 and 0.304304 for the two motors.",
+      "Those models were incorporated into MATLAB/Simulink with finite-state logic for rest, racing/line following, line recovery, and parking, along with encoder feedback, PID/PI control, sensor-based transitions, and friction compensation. My specific contribution was the motor speed-difference controller, which I designed using MATLAB root-locus techniques so lateral tracking error could be translated into the relative wheel-speed correction needed to steer the robot back toward the line. The project therefore went through the complete controls workflow of hardware characterization, sensor calibration, system identification, controller design, simulation, integration, and physical testing rather than beginning directly with trial-and-error gain tuning."
+    ],
+    "takeaway": "A complete controls workflow from measured hardware behavior to models, controller design, finite-state integration, and physical validation—with my direct contribution centered on root-locus wheel-speed correction.",
+    "report": "docs/ME375_Autonomous_Robot_Report.pdf"
   },
   {
-    id: 'wind-tunnel',
-    title: 'Race-Car Spoiler Wind-Tunnel Study',
-    course: 'ME 30801 · Fluid Mechanics Laboratory',
-    categories: ['thermal', 'design', 'data'],
-    label: 'Aerodynamics / Experimental Testing',
-    summary: 'Designed and tested a 3D-printed rear spoiler to quantify lift/drag behavior and identify the maximum-downforce / flow-separation region.',
-    tags: ['SolidWorks', 'Wind Tunnel', 'LabVIEW', 'MATLAB', 'Uncertainty'],
-    metrics: [['0–60°', 'angle of attack'], ['30.88 m/s', 'test speed'], ['3', 'trials / angle'], ['Cₗ 0.65', 'peak at 40°']],
-    methods: [
-      'Modeled the spoiler in SolidWorks, FDM printed it, and mounted it on a simplified vehicle model.',
-      'Calibrated the lift/drag measurement system and tested 0–60° angle of attack in 10° increments at a fixed 40 Hz tunnel setting.',
-      'Processed 15-second datasets in MATLAB, averaged force data, calculated standard deviations, and converted forces to aerodynamic coefficients.',
-      'Identified peak downforce near 40° before lift coefficient fell while drag continued to increase.'
+    "id": "wind-tunnel",
+    "title": "Race-Car Spoiler Wind-Tunnel Study",
+    "course": "ME 30801 · Fluid Mechanics Laboratory",
+    "categories": [
+      "thermal",
+      "design",
+      "data"
     ],
-    takeaway: 'A practical test-and-validation project combining CAD, additive manufacturing, instrumentation, calibration, data reduction, uncertainty, and fluid-mechanics interpretation.',
-    report: 'docs/ME30801_Wind_Tunnel_Spoiler_Report.pdf'
+    "label": "Aerodynamics / Experimental Testing",
+    "summary": "Designed and tested a 3D-printed rear spoiler to quantify lift/drag behavior and identify the maximum-downforce / flow-separation region.",
+    "tags": [
+      "SolidWorks",
+      "Wind Tunnel",
+      "LVDT",
+      "MATLAB",
+      "Uncertainty"
+    ],
+    "metrics": [
+      [
+        "0–60°",
+        "angle of attack"
+      ],
+      [
+        "30.880 m/s",
+        "test speed"
+      ],
+      [
+        "3",
+        "trials / angle"
+      ],
+      [
+        "Cₗ 0.65",
+        "peak at 40°"
+      ]
+    ],
+    "details": [
+      "My team designed a simplified race-car model and adjustable rear spoiler in SolidWorks, fabricated the test article using FDM 3D printing, and evaluated the spoiler experimentally in Purdue’s low-speed open-circuit wind tunnel. The spoiler was tested from 0° to 60° angle of attack in 10° increments at a constant tunnel setting of 40 Hz, corresponding to approximately 30.880 m/s. Before taking aerodynamic data, the force-measurement system was calibrated so lift and drag could be derived from the LVDT/load-cell voltage response rather than interpreting raw voltages directly.",
+      "For each angle, we collected three trials and processed 15-second datasets in MATLAB. I used averaging and standard deviations to reduce the raw measurements into representative lift/drag forces and uncertainty/error bars, then converted those forces into Cᴅ and Cₗ. The measured Cᴅ/Cₗ progression was 0.89/0.33 at 0°, 0.89/0.48 at 10°, 0.95/0.57 at 20°, 1.18/0.62 at 30°, 1.31/0.65 at 40°, 1.39/0.63 at 50°, and 1.42/0.57 at 60°.",
+      "The important result was the trend rather than simply the maximum force value. Cₗ increased through 40°, where it peaked at approximately 0.65, then declined while Cᴅ continued to increase, indicating the onset of flow separation and diminishing aerodynamic return beyond that region. We also documented limitations including the single test speed, simplified vehicle geometry, ground-plane/frontal-area assumptions, and an approximately 2 mm print shift in the vehicle model that could have changed local airflow. The project combined CAD, additive manufacturing, instrumentation, calibration, MATLAB data reduction, uncertainty analysis, and physical interpretation."
+    ],
+    "takeaway": "The project demonstrates how I move from CAD and fabrication through instrument calibration, repeated testing, MATLAB reduction, uncertainty, and engineering interpretation of a physical system.",
+    "report": "docs/ME30801_Wind_Tunnel_Spoiler_Report.pdf"
   },
   {
-    id: 'blanket-insulation',
-    title: 'Blanket Insulation Thermal Comparison',
-    course: 'ME 315 · Heat & Mass Transfer',
-    categories: ['thermal', 'data'],
-    label: 'Heat Transfer / Experimental Modeling',
-    summary: 'Compared polyester, wool, and down using a heated epoxy skin analog, thermocouples, LabVIEW, and transient lumped-capacitance analysis.',
-    tags: ['Heat Transfer', 'Thermocouples', 'LabVIEW', 'Transient Analysis'],
-    metrics: [['3', 'materials'], ['37 °C', 'initial plate'], ['~5 °C', 'cold environment'], ['0.0152 W/m·K', 'measured wool k']],
-    methods: [
-      'Used a 6.35 cm × 6.35 cm × 0.381 cm epoxy plate as a repeatable skin analog and held test setup constant across materials.',
-      'Logged temperature every second for one-hour cooling tests and monitored the environment with infrared measurements.',
-      'Verified the lumped-capacitance assumption (Bi ≈ 0.03), linearized the transient response, and solved for time constants, heat-transfer coefficients, and conductivity.',
-      'Compared experimental properties with references and documented model limitations and uncertainty.'
+    "id": "blanket-insulation",
+    "title": "Blanket Insulation Thermal Comparison",
+    "course": "ME 315 · Heat & Mass Transfer",
+    "categories": [
+      "thermal",
+      "data"
     ],
-    takeaway: 'Shows thermal test design, instrumentation, transient modeling, property estimation, validation against references, and thoughtful treatment of experimental error.',
-    report: 'docs/ME315_Blanket_Insulation_Report.pdf'
+    "label": "Heat Transfer / Experimental Modeling",
+    "summary": "Compared polyester, wool, and down using a heated epoxy skin analog, thermocouples, LabVIEW, and transient lumped-capacitance analysis.",
+    "tags": [
+      "Heat Transfer",
+      "Thermocouples",
+      "LabVIEW",
+      "Transient Analysis"
+    ],
+    "metrics": [
+      [
+        "3",
+        "materials"
+      ],
+      [
+        "37 °C",
+        "initial plate"
+      ],
+      [
+        "~5 °C",
+        "cold environment"
+      ],
+      [
+        "0.0152 W/m·K",
+        "measured wool k"
+      ]
+    ],
+    "details": [
+      "Our team designed a transient heat-transfer experiment to compare polyester, wool, and down as insulation materials under matched conditions. We created a repeatable human-skin analog using an epoxy plate measuring 6.35 cm × 6.35 cm × 0.381 cm, heated the plate to 37°C, and placed it in a cooler maintained near 5°C. The polyester, wool, and down samples had thicknesses of approximately 0.635 cm, 0.1016 cm, and 0.23 cm, respectively. Thermocouples were positioned beneath and above the insulation, the cooler temperature was monitored with infrared measurements, and LabVIEW recorded temperature at 1-second intervals for one hour.",
+      "After collecting the three material trials, we checked whether a lumped-capacitance treatment was appropriate rather than applying the model automatically. The estimated Biot number was approximately 0.03, supporting the lumped approximation. We then linearized the transient cooling curves and used the resulting slopes to determine time constants, overall heat-transfer coefficients, and material thermal conductivity. The experimental k values were approximately 0.390 W/m·K for polyester, 0.0152 W/m·K for wool, and 0.0344 W/m·K for down, making wool the strongest insulator in our experiment.",
+      "We also compared the measured conductivities against reference values rather than presenting the calculations without validation. The resulting discrepancies were approximately 2.63% for polyester, 67.66% for wool, and 37.60% for down, which led us to document limitations in the simplifying assumptions, experimental repeatability, contact conditions, and number of trials. The project was therefore as much about understanding why an experimental result disagreed with a reference as it was about calculating thermal conductivity."
+    ],
+    "takeaway": "A thermal test-and-modeling project that emphasizes controlled experimentation, instrumentation, model validation, property estimation, and honest treatment of uncertainty and error.",
+    "report": "docs/ME315_Blanket_Insulation_Report.pdf"
   },
   {
-    id: 'audio-equalizer',
-    title: 'Four-Stage Audio Equalizer',
-    course: 'ECE 20007 · Electrical Engineering Fundamentals Lab',
-    categories: ['controls', 'design'],
-    label: 'Electrical / Hardware Integration',
-    summary: 'Designed, wired, debugged, and validated a four-stage analog equalizer with passive filters, adjustable op-amp gain, signal recombination, and speaker output.',
-    tags: ['LTspice', 'Oscilloscope', 'Op-Amps', 'Filters', 'Breadboarding'],
-    metrics: [['3.2 kHz', 'high-pass target'], ['320 Hz', 'low-pass target'], ['3.30%', 'Vout error'], ['605 mW', 'output power']],
-    methods: [
-      'Split the input into treble, mid, and bass paths using RC high-pass, RLC band-pass, and RC low-pass filters.',
-      'Used potentiometer-controlled inverting amplifiers for independent gain adjustment and a summing stage to recombine the three bands.',
-      'Verified frequency response using oscilloscope/FRA measurements and compared measured -3 dB behavior against design targets.',
-      'Drove a speaker through an LM386 power stage with ~20× gain and traced discrepancies to component tolerance and wiring resistance.'
+    "id": "audio-equalizer",
+    "title": "Four-Stage Audio Equalizer",
+    "course": "ECE 20007 · Electrical Engineering Fundamentals Lab",
+    "categories": [
+      "controls",
+      "design"
     ],
-    takeaway: 'Demonstrates electrical schematic interpretation, circuit design, breadboarding, test equipment, debugging, measurement, and hardware integration.',
-    report: 'docs/ECE20007_Audio_Equalizer_Report.pdf'
+    "label": "Electrical / Hardware Integration",
+    "summary": "Designed, wired, debugged, and validated a four-stage analog equalizer with passive filters, adjustable op-amp gain, signal recombination, and speaker output.",
+    "tags": [
+      "LTspice",
+      "Oscilloscope",
+      "Op-Amps",
+      "Filters",
+      "Breadboarding"
+    ],
+    "metrics": [
+      [
+        "3.2 kHz",
+        "high-pass target"
+      ],
+      [
+        "320 Hz",
+        "low-pass target"
+      ],
+      [
+        "3.30%",
+        "Vout error"
+      ],
+      [
+        "605 mW",
+        "output power"
+      ]
+    ],
+    "details": [
+      "I designed, breadboarded, debugged, and tested a four-stage analog audio equalizer that separated an input signal into treble, mid-frequency, and bass bands before independently adjusting and recombining them. The first stage used an RC high-pass filter, RLC band-pass filter, and RC low-pass filter. The second stage used potentiometer-controlled inverting operational amplifiers so the gain of each frequency band could be adjusted independently. A summing amplifier then recombined the three signals and provided overall volume control, after which an LM386 power-amplifier stage drove the speaker.",
+      "The high-pass and low-pass filters were designed around nominal 3.2 kHz and 320 Hz −3 dB cutoffs. Measurements placed the high-pass transition around 3.311–3.548 kHz, the low-pass response around 316.2–338.8 Hz, and the RLC band-pass range at approximately 446.7 Hz–3.311 kHz. I used calculations, LTspice, oscilloscope/FRA measurements, and breadboard troubleshooting to compare the physical response against the design rather than assuming the nominal component values would produce ideal behavior.",
+      "Before the power-amplifier stage, the maximum measured output was 96.7 mV RMS versus 100 mV expected, corresponding to 3.30% error. The LM386 then provided approximately 20× gain, and the final circuit produced approximately 605 mW, exceeding the 400 mW design requirement. The discrepancies between theoretical and measured behavior also gave me experience tracing real circuit performance back to component tolerance, wiring resistance, breadboard behavior, and measurement uncertainty."
+    ],
+    "takeaway": "The project connects circuit theory to physical hardware through design calculations, simulation, breadboarding, oscilloscope/FRA measurements, debugging, and measured performance validation.",
+    "report": "docs/ECE20007_Audio_Equalizer_Report.pdf"
   },
   {
-    id: 'vip-rover',
-    title: 'Autonomous Rover — Drone Video VIP',
-    course: 'VIP 27920 · Vertically Integrated Projects',
-    categories: ['controls', 'data'],
-    label: 'Autonomy / Machine Learning',
-    summary: 'Worked on the rover hardware subteam of an autonomous filming system, contributing to rover integration and machine-learning / visual-detection development.',
-    tags: ['Python', 'Computer Vision', 'CIFAR-10', 'IR', 'LiDAR'],
-    metrics: [['78.74%', 'CIFAR-10 accuracy'], ['10', 'epochs'], ['Rover', 'hardware focus'], ['IR + LiDAR', 'sensing concepts']],
-    methods: [
-      'Supported rover functionality and hardware/software integration for autonomous motion through a miniature-city environment.',
-      'Worked with the team on CIFAR-10 image-classification code in Google Colab and documented planned ResNet 18/34/50 follow-on experiments.',
-      'Built exposure to visual/object detection, infrared sensing, LiDAR, and autonomous rover/drone coordination.'
+    "id": "vip-rover",
+    "title": "Autonomous Rover — Drone Video VIP",
+    "course": "VIP 27920 · Vertically Integrated Projects",
+    "categories": [
+      "controls",
+      "data"
     ],
-    takeaway: 'An early multidisciplinary autonomy project connecting hardware, software integration, sensing, and machine-learning concepts.',
-    report: null
+    "label": "Autonomy / Machine Learning",
+    "summary": "Worked on the rover hardware subteam of an autonomous filming system, contributing to rover integration and machine-learning / visual-detection development.",
+    "tags": [
+      "Python",
+      "Computer Vision",
+      "CIFAR-10",
+      "IR",
+      "LiDAR"
+    ],
+    "metrics": [
+      [
+        "78.74%",
+        "CIFAR-10 accuracy"
+      ],
+      [
+        "10",
+        "epochs"
+      ],
+      [
+        "Rover",
+        "hardware focus"
+      ],
+      [
+        "IR + LiDAR",
+        "sensing concepts"
+      ]
+    ],
+    "details": [
+      "I worked on the rover/hardware side of Purdue’s Drone Video Vertically Integrated Project, whose larger goal was to create an autonomous filming system in which a rover navigated through a miniature-city environment while a drone followed and recorded it using related detection and tracking methods. My work was therefore not isolated to a standalone robot; the rover had to function as one component of a larger hardware/software autonomy system.",
+      "I supported rover functionality and integration around autonomous navigation concepts including visual/object detection, infrared sensing, LiDAR, and coordination between hardware and software. I also contributed to Python machine-learning work in Google Colab, where a CIFAR-10 image-classification model reached 78.74% accuracy after 10 epochs. We documented potential follow-on experiments using ResNet-18, ResNet-34, and ResNet-50 architectures. The project gave me early experience working across mechanical hardware, sensing, software integration, computer vision, and machine learning rather than treating each discipline as an isolated task."
+    ],
+    "takeaway": "An early multidisciplinary autonomy project that exposed me to the interfaces between mechanical hardware, sensing, software integration, computer vision, and machine learning.",
+    "report": null
   },
   {
-    id: 'natural-catalysts',
-    title: 'NaturalCatalysts Enzyme Kinetics Analysis',
-    course: 'ENGR 132 · Transforming Ideas to Innovation II',
-    categories: ['data'],
-    label: 'MATLAB / Data Modeling',
-    summary: 'Built a MATLAB workflow to analyze 100 kinetic-enzyme datasets, automate reaction-rate extraction, estimate V₀/Vmax/Km, and communicate defensible client conclusions.',
-    tags: ['MATLAB', 'Algorithm Design', 'Data Analysis', 'Error Analysis'],
-    metrics: [['100', 'datasets'], ['5', 'enzyme families'], ['20%', 'slope threshold'], ['~1.1%', 'Km reference error']],
-    methods: [
-      'Automated identification of each reaction’s initial linear region using 10-point slope windows and a 20% change threshold.',
-      'Estimated V₀ from initial slopes and Vmax/Km using Lineweaver–Burk linearization with polyfit/polyval.',
-      'Validated the original method against reference data and scaled the workflow across five enzymes and duplicate tests.',
-      'Converted technical results into graphics, error analyses, and an ethical client-facing recommendation.'
+    "id": "natural-catalysts",
+    "title": "NaturalCatalysts Enzyme Kinetics Analysis",
+    "course": "ENGR 132 · Transforming Ideas to Innovation II",
+    "categories": [
+      "data"
     ],
-    takeaway: 'An early example of translating noisy experimental data into a repeatable engineering analysis workflow and clear technical communication.',
-    report: 'docs/ENGR132_NaturalCatalysts_Technical_Brief.pdf'
+    "label": "MATLAB / Data Modeling",
+    "summary": "Built a MATLAB workflow to analyze 100 kinetic-enzyme datasets, automate reaction-rate extraction, estimate V₀/Vmax/Km, and communicate defensible client conclusions.",
+    "tags": [
+      "MATLAB",
+      "Algorithm Design",
+      "Data Analysis",
+      "Error Analysis"
+    ],
+    "metrics": [
+      [
+        "100",
+        "datasets"
+      ],
+      [
+        "5",
+        "enzyme families"
+      ],
+      [
+        "20%",
+        "slope threshold"
+      ],
+      [
+        "~1.1%",
+        "Km reference error"
+      ]
+    ],
+    "details": [
+      "Our team built a MATLAB workflow for 100 kinetic-enzyme datasets spanning five enzyme families, with 10 tests plus duplicate measurements per enzyme, for a simulated industrial client. The core challenge was determining kinetic parameters automatically rather than manually selecting useful portions of every concentration-versus-time curve. To identify each reaction’s initial linear region, we divided the data into 10-point windows, calculated slope behavior between windows, and terminated the initial region once the slope differed from the original region by more than a 20% threshold. This reduced the influence of later nonlinear/noisy behavior when estimating the initial reaction rate V₀.",
+      "Once V₀ had been extracted, we used Lineweaver–Burk linearization with MATLAB polyfit and polyval to calculate Vmax and Km across all five enzymes and their duplicate datasets. We validated the original parameter-identification method against PGO-X50 reference values; it produced approximately 4.3% error in Vmax and 1.1% error in Km before later refinements were evaluated. The final workflow scaled the same process across the full dataset and generated technical plots and error analyses that we converted into a client-facing brief. The important engineering lesson was not only writing MATLAB code, but building a repeatable method for turning noisy experimental data into parameter estimates and then communicating how much confidence a client should place in those results."
+    ],
+    "takeaway": "A data-analysis project focused on building a repeatable algorithm, validating its error, scaling it across a full dataset, and communicating the result responsibly to a client.",
+    "report": "docs/ENGR132_NaturalCatalysts_Technical_Brief.pdf"
   },
   {
-    id: 'little-blazer',
-    title: 'Little Blazer Engine CAD Assembly',
-    course: 'CGT 163 · Graphical Communication',
-    categories: ['design'],
-    label: 'CAD / Assembly Design',
-    summary: 'Recreated a multi-component engine from dimensioned drawings in Siemens NX and assembled the complete digital model using geometric constraints.',
-    tags: ['Siemens NX', 'Part Modeling', 'Assembly Constraints', 'Engineering Drawings'],
-    metrics: [['Multi-week', 'final project'], ['NX', 'parametric CAD'], ['Full', 'digital assembly'], ['Fit + alignment', 'verification']],
-    methods: [
-      'Interpreted dimensioned 3D drawings and recreated individual components with parametric modeling features.',
-      'Applied assembly constraints to preserve intended mechanical relationships and interfaces.',
-      'Inspected fit, alignment, and part relationships in the final digital engine assembly.'
+    "id": "little-blazer",
+    "title": "Little Blazer Engine CAD Assembly",
+    "course": "CGT 163 · Graphical Communication",
+    "categories": [
+      "design"
     ],
-    takeaway: 'Foundational CAD work that strengthened spatial reasoning, drawing interpretation, parametric part modeling, and assembly organization.',
-    report: null
+    "label": "CAD / Assembly Design",
+    "summary": "Recreated a multi-component engine from dimensioned drawings in Siemens NX and assembled the complete digital model using geometric constraints.",
+    "tags": [
+      "Siemens NX",
+      "Part Modeling",
+      "Assembly Constraints",
+      "Engineering Drawings"
+    ],
+    "metrics": [
+      [
+        "Multi-week",
+        "final project"
+      ],
+      [
+        "NX",
+        "parametric CAD"
+      ],
+      [
+        "Full",
+        "digital assembly"
+      ],
+      [
+        "Fit + alignment",
+        "verification"
+      ]
+    ],
+    "details": [
+      "For my CGT 163 final project, I recreated the Little Blazer Engine in Siemens NX from dimensioned 3D PDF drawings. I began by interpreting the supplied drawings and determining how each component could be represented using parametric features rather than simply approximating its exterior shape. Individual parts were modeled separately so their dimensions and geometric relationships could be controlled systematically.",
+      "After completing the individual components, I built the engine as a multi-part NX assembly using geometric and assembly constraints to reproduce the intended interfaces and mechanical relationships between parts. I then inspected fit, alignment, and component relationships throughout the assembly to identify modeling or constraint errors. The project was one of my first substantial experiences moving from engineering drawings to a structured parametric assembly and helped establish the Siemens NX workflow I later used in more advanced mechanical-design projects."
+    ],
+    "takeaway": "Foundational CAD work that strengthened drawing interpretation, parametric modeling, assembly constraints, interface checking, and multi-part model organization.",
+    "report": null
   },
   {
-    id: 'campus-safety',
-    title: 'Campus Safety Intersection Redesign',
-    course: 'ENGR 131 · Transforming Ideas to Innovation I',
-    categories: ['design', 'data'],
-    label: 'Human-Centered Design / Decision Analysis',
-    summary: 'Redesigned Purdue’s Schleman-Forney intersection using stakeholder research, prototype testing, traffic simulations, and a weighted decision matrix.',
-    tags: ['Design Process', 'Stakeholder Research', 'WDM', 'CAD', 'Prototyping'],
-    metrics: [['30+', 'survey respondents'], ['66.7%', 'reported hit / near-hit'], ['90%', 'perceived safety'], ['116.7', 'WDM score']],
-    methods: [
-      'Interviewed and surveyed users to convert safety, affordability, maintenance, and convenience needs into measurable design criteria.',
-      'Compared three concepts with Minecraft traffic simulations, prototype testing, and user feedback.',
-      'Used a weighted decision matrix to select a separated plastic-barrier lane concept and iterated material, spacing, visibility, and cost.'
+    "id": "campus-safety",
+    "title": "Campus Safety Intersection Redesign",
+    "course": "ENGR 131 · Transforming Ideas to Innovation I",
+    "categories": [
+      "design",
+      "data"
     ],
-    takeaway: 'Shows a full human-centered design cycle: problem scoping, stakeholder research, criteria definition, prototyping, test feedback, weighted decisions, and design iteration.',
-    report: 'docs/ENGR131_Campus_Safety_Design_Report.pdf'
+    "label": "Human-Centered Design / Decision Analysis",
+    "summary": "Redesigned Purdue’s Schleman-Forney intersection using stakeholder research, prototype testing, traffic simulations, and a weighted decision matrix.",
+    "tags": [
+      "Design Process",
+      "Stakeholder Research",
+      "WDM",
+      "CAD",
+      "Prototyping"
+    ],
+    "metrics": [
+      [
+        "30+",
+        "survey respondents"
+      ],
+      [
+        "66.7%",
+        "reported hit / near-hit"
+      ],
+      [
+        "90%",
+        "perceived safety"
+      ],
+      [
+        "116.7",
+        "WDM score"
+      ]
+    ],
+    "details": [
+      "In a four-person team, I worked on redesigning pedestrian and wheeled traffic flow around Purdue’s Schleman-Forney/Engineering Fountain intersection. We began with stakeholder research instead of immediately proposing a physical solution. A survey of 30+ Purdue students found that 66.7% reported having been hit or nearly hit by a vehicle or bicycle at the intersection, which gave us quantitative justification for focusing on clearer separation between pedestrians, cyclists, skateboarders, and other personal-mobility users.",
+      "We generated and evaluated three primary concepts using prototypes, Minecraft-based traffic simulations, and user feedback. Survey participants rated an enclosed/divided bike-lane concept 90% safe, compared with 85.7% for a yield-sign concept and 71.4% for the small-barrier/speed-bump concept. Rather than choosing solely from the survey, we constructed a weighted decision matrix with weights of 15 for safety, 10 for affordability, 10 for maintenance, and 5 for convenience. The plastic-barrier solution received an overall weighted score of approximately 116.7 and a safety score of 60, the highest among the alternatives.",
+      "We then refined the concept into a strategically spaced HDPE barrier system separating pedestrian and bike traffic. Iterations addressed barrier spacing, material choice, Purdue-themed visibility, reflective/biomimicry-inspired features, winter operation, cost, maintenance, and interference with traffic flow. The project was an early example of the same engineering process I use now: define the problem with data, translate stakeholder needs into measurable criteria, generate alternatives, test them, quantify tradeoffs, and use the results to justify a final design."
+    ],
+    "takeaway": "A full human-centered design cycle driven by quantified stakeholder need, concept comparison, simulation/prototyping, weighted tradeoffs, and iterative refinement.",
+    "report": "docs/ENGR131_Campus_Safety_Design_Report.pdf"
   }
 ];
 
@@ -232,7 +477,7 @@ function openProject(project) {
   document.getElementById('modal-summary').textContent = project.summary;
   document.getElementById('modal-art').style.background = `linear-gradient(135deg, ${artColor(projects.indexOf(project))}, var(--surface-2))`;
   document.getElementById('modal-metrics').innerHTML = project.metrics.map(([value,label]) => `<div><strong>${value}</strong><span>${label}</span></div>`).join('');
-  document.getElementById('modal-methods').innerHTML = project.methods.map(item => `<li>${item}</li>`).join('');
+  document.getElementById('modal-details').innerHTML = project.details.map(paragraph => `<p>${paragraph}</p>`).join('');
   document.getElementById('modal-takeaway').textContent = project.takeaway;
   document.getElementById('modal-tags').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
   const actions = document.getElementById('modal-actions');
@@ -304,6 +549,8 @@ function handleDeepLink() {
     if (!experience) return;
     // A short delay makes the jump reliable after fonts/layout finish loading.
     setTimeout(() => {
+      const detail = experience.querySelector('.experience-details');
+      if (detail) detail.open = true;
       experience.scrollIntoView({ behavior: 'auto', block: 'center' });
       experience.classList.add('deep-link-target');
       setTimeout(() => experience.classList.remove('deep-link-target'), 1800);

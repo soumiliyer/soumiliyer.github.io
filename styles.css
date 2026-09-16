@@ -301,3 +301,69 @@ button { font: inherit; }
   outline-offset: 6px;
   transition: outline-color .4s ease, outline-offset .4s ease;
 }
+
+/* v7: detailed recruiter-facing project and experience narratives */
+.experience-details {
+  margin-top: 18px;
+  max-width: 980px;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+.experience-details summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--ink);
+  font-size: .78rem;
+  font-weight: 780;
+  letter-spacing: .02em;
+}
+.experience-details summary::-webkit-details-marker { display: none; }
+.experience-details summary span {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: transform .2s ease;
+}
+.experience-details[open] summary span { transform: rotate(45deg); }
+.experience-detail-copy {
+  padding-top: 16px;
+  max-width: 980px;
+}
+.experience-detail-copy p {
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.72;
+}
+.experience-detail-copy strong { color: var(--ink); }
+
+.modal-columns-detailed {
+  grid-template-columns: minmax(0, 1.55fr) minmax(250px, .65fr);
+  align-items: start;
+}
+.modal-detail-copy p {
+  margin: 0 0 18px;
+  color: var(--muted);
+  line-height: 1.74;
+}
+.modal-detail-copy p:last-child { margin-bottom: 0; }
+.modal-takeaway-column {
+  position: sticky;
+  top: 24px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-2);
+}
+.modal-takeaway-column h3 { margin-top: 0; }
+.modal-takeaway-column .tag-row { margin-top: 18px; }
+
+@media (max-width: 760px) {
+  .modal-columns-detailed { grid-template-columns: 1fr; }
+  .modal-takeaway-column { position: static; }
+}

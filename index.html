@@ -6,8 +6,8 @@
   <meta name="description" content="Soumil Iyer — mechanical engineer focused on manufacturing, automation, product development, testing, and process improvement." />
   <meta name="theme-color" content="#151515" />
   <title>Soumil Iyer | Mechanical Engineer</title>
-  <link rel="stylesheet" href="styles.css?v=6" />
-  <script defer src="script.js?v=6"></script>
+  <link rel="stylesheet" href="styles.css?v=7" />
+  <script defer src="script.js?v=7"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -124,8 +124,15 @@
             <div class="timeline-body">
               <p class="timeline-org">Purdue University</p>
               <h3>Rapid Prototyping Lab Student Employee</h3>
-              <p>Guide students from CAD/STL export through printer and material selection, slicing, orientation, support strategy, infill, and temperature settings in Bambu Studio and Ultimaker Cura. Set up new printers and perform calibration, preventive maintenance, and troubleshooting to keep lab equipment reliable.</p>
+              <p>Support students through the complete CAD-to-part FDM/FFF workflow while maintaining and troubleshooting the lab's additive-manufacturing equipment.</p>
               <div class="tag-row"><span>Additive Manufacturing</span><span>DFM</span><span>Equipment Troubleshooting</span><span>Bambu Studio</span><span>Cura</span></div>
+              <details class="experience-details">
+                <summary>Read full experience <span aria-hidden="true">+</span></summary>
+                <div class="experience-detail-copy">
+                  <p>In Purdue's Rapid Prototyping Lab, I support students through the complete process of turning a CAD model into a manufacturable FDM/FFF part. Rather than only operating printers, I help students work through the decisions that determine whether a print will actually succeed: exporting CAD geometry to STL, selecting an appropriate printer and material, preparing the model in Bambu Studio or Ultimaker Cura, and choosing orientation, supports, infill, layer settings, temperatures, and other material-dependent parameters. When a design is likely to fail or print poorly, I review the geometry and slicer setup before launch and explain how changes to the CAD model or process parameters can improve manufacturability, strength, surface finish, and print reliability.</p>
+                  <p>I also support the equipment itself by setting up newly deployed printers and performing calibration, preventive maintenance, troubleshooting, and general upkeep on existing systems. This makes the role a combination of additive manufacturing, equipment support, design for manufacturing, and technical coaching: I diagnose whether a problem originates from geometry, slicing strategy, material behavior, machine condition, or user setup, then translate that diagnosis into a practical fix the student can understand and apply.</p>
+                </div>
+              </details>
             </div>
           </article>
 
@@ -134,8 +141,15 @@
             <div class="timeline-body">
               <p class="timeline-org">Purdue University</p>
               <h3>Graduate Teaching Assistant — Intro to Manufacturing</h3>
-              <p>Instructed a 19-student section in lathing, milling, CNC, metal, wood, and electronics projects. Applied ANSI/ASME Y14.5 GD&amp;T to student drawings, reviewed CAD/BOM/assembly documentation, supported metrology and lab checkouts, and coached students from design intent to manufacturable parts.</p>
+              <p>Instructed a 19-student section across machining, manufacturing, GD&amp;T, metrology, assembly, and design-for-manufacturing labs.</p>
               <div class="tag-row"><span>Machining</span><span>GD&amp;T</span><span>Metrology</span><span>DFM</span><span>Technical Coaching</span></div>
+              <details class="experience-details">
+                <summary>Read full experience <span aria-hidden="true">+</span></summary>
+                <div class="experience-detail-copy">
+                  <p>As a Graduate Teaching Assistant for Purdue's introductory manufacturing course, I instructed a <strong>19-student section</strong> through hands-on labs covering manual lathing, milling, CNC machining, metalworking, woodworking, electronics, component assembly, and design for manufacturing. My role extended beyond demonstrating equipment: I helped students connect their CAD intent to the realities of making and assembling parts, including which dimensions matter, how tolerances influence fit, and how a manufacturing process constrains the geometry a designer can reasonably specify.</p>
+                  <p>I taught dimensional tolerancing and GD&amp;T using <strong>ANSI/ASME Y14.5</strong>, reviewed engineering drawings, CAD models, bills of materials, assembly procedures, and supporting design documentation against project requirements, and helped students identify manufacturability or assembly problems before they became physical failures. I also supervised equipment use, shop safety, laboratory checkouts, metrology activities, and project validation. The experience strengthened my ability to move between design, manufacturing, inspection, documentation, and troubleshooting while explaining the reasoning behind engineering decisions rather than simply giving students an answer.</p>
+                </div>
+              </details>
             </div>
           </article>
 
@@ -144,8 +158,15 @@
             <div class="timeline-body">
               <p class="timeline-org">Purdue University</p>
               <h3>Mechanical Engineering Undergraduate Research Intern</h3>
-              <p>Investigated orientation-dependent behavior in additively manufactured polymers under Dr. Luz Sotelo. Fabricated 60+ dogbones and 24 disks across six thermoplastics and two build orientations, then combined ASTM D638 tensile testing, ultrasonic NDE, and MATLAB analysis to quantify anisotropy and mechanical response.</p>
+              <p>Characterized orientation-dependent behavior in six FDM thermoplastics using 60+ tensile specimens, 24 ultrasonic specimens, ASTM D638 testing, NDE, and MATLAB.</p>
               <div class="tag-row"><span>ASTM D638</span><span>Ultrasonic NDE</span><span>MATLAB</span><span>Materials Characterization</span><span>FDM</span></div>
+              <details class="experience-details">
+                <summary>Read full experience <span aria-hidden="true">+</span></summary>
+                <div class="experience-detail-copy">
+                  <p>I investigated how FDM build orientation changes the mechanical and ultrasonic response of 3D-printed thermoplastics. To create a controlled comparison, I fabricated <strong>60+ ASTM-style dogbone specimens and 24 disk specimens across six thermoplastics</strong>, printing each material in both horizontal and vertical orientations. The dogbones were used for destructive mechanical characterization through <strong>ASTM D638 tensile testing</strong>, while the disks were used for ultrasonic wave-speed measurements as a nondestructive evaluation method.</p>
+                  <p>I processed the resulting stress-strain and ultrasonic datasets in MATLAB, converting the raw tensile data into Young's modulus and comparing ultrasonic wave speed across materials and orientations. The key part of the work was establishing a consistent fabrication-test-analysis workflow so orientation could be isolated as the variable of interest. Comparing horizontal and vertical populations showed that build direction significantly influenced tensile modulus and failure behavior in the tested polymers. I then consolidated the fabrication methodology, test procedures, MATLAB analysis, uncertainty considerations, results, and conclusions into formal technical documentation.</p>
+                </div>
+              </details>
             </div>
           </article>
 
@@ -154,17 +175,31 @@
             <div class="timeline-body">
               <p class="timeline-org">Purdue University</p>
               <h3>Undergraduate Research Assistant — Energy Storage Analytics</h3>
-              <p>Worked under Dr. Partha Mukherjee on Li-ion battery-performance analytics. Developed a Python/customtkinter application that ingests, analyzes, and visualizes 1,000+ user-uploaded datapoints and built reusable workflows for battery comparison, plotting, and research documentation.</p>
+              <p>Developed a Python/customtkinter workflow for importing, analyzing, comparing, and visualizing 1,000+ Li-ion battery-performance datapoints.</p>
               <div class="tag-row"><span>Li-ion Batteries</span><span>Python</span><span>customtkinter</span><span>Data Visualization</span><span>Energy Storage</span></div>
+              <details class="experience-details">
+                <summary>Read full experience <span aria-hidden="true">+</span></summary>
+                <div class="experience-detail-copy">
+                  <p>I supported Li-ion battery research by developing software around battery-performance datasets rather than treating each dataset as a one-off analysis. I built an interactive Python application using <strong>customtkinter</strong> that allowed users to upload battery data, process it, generate plots, and compare results through a repeatable interface. The tool was developed to handle and visualize <strong>1,000+ battery-performance datapoints</strong>, reducing the amount of manual work needed whenever similar analysis or comparison tasks were repeated.</p>
+                  <p>The project required me to think about both the software workflow and the engineering meaning of the outputs. I structured reusable data-handling, visualization, and comparison routines so researchers could move from imported data to interpretable plots more consistently, then used the resulting trends to build practical understanding of Li-ion cell behavior, cell-design considerations, performance tradeoffs, and battery optimization. The experience gave me a useful bridge between mechanical engineering, battery technology, data analytics, and engineering-tool development.</p>
+                </div>
+              </details>
             </div>
           </article>
 
-          <article class="timeline-item compact reveal" id="experience-teaching-assistant">
+          <article class="timeline-item reveal" id="experience-teaching-assistant">
             <div class="timeline-date">Aug 2024 — Dec 2024</div>
             <div class="timeline-body">
               <p class="timeline-org">Purdue University</p>
               <h3>Teaching Assistant — Thermodynamics I &amp; ENGR 131</h3>
-              <p>Mentored 25–30 Thermodynamics I students and instructed 50+ ENGR 131 students in Excel/Python engineering workflows, calculations, and team projects.</p>
+              <p>Mentored 25–30 Thermodynamics I students, instructed 50+ ENGR 131 students in Excel/Python, and evaluated 15+ assignments per student.</p>
+              <details class="experience-details">
+                <summary>Read full experience <span aria-hidden="true">+</span></summary>
+                <div class="experience-detail-copy">
+                  <p>I worked simultaneously with two very different student groups. In Thermodynamics I, I mentored approximately <strong>25–30 students</strong> through office hours by breaking down thermodynamic concepts, walking through solution strategies, and helping students determine where an incorrect assumption, equation, or calculation caused their solution to diverge. In ENGR 131, I instructed <strong>50+ students</strong> in using Microsoft Excel and Python for engineering calculations, data analysis, assignments, and team projects.</p>
+                  <p>I also graded <strong>15+ assignments per student</strong>, including engineering calculations, spreadsheet logic, individual deliverables, and team reports. Because the work ranged from thermodynamic problem solving to introductory programming and engineering communication, the role strengthened my ability to explain technical reasoning at different levels and to evaluate not only whether a result was correct, but whether the method used to obtain it was defensible.</p>
+                </div>
+              </details>
             </div>
           </article>
         </div>
@@ -293,12 +328,12 @@
     <h2 id="modal-title"></h2>
     <p class="modal-summary" id="modal-summary"></p>
     <div class="modal-metrics" id="modal-metrics"></div>
-    <div class="modal-columns">
-      <div>
-        <h3>How I approached it</h3>
-        <ul id="modal-methods"></ul>
+    <div class="modal-columns modal-columns-detailed">
+      <div class="modal-detail-column">
+        <h3>Project details</h3>
+        <div class="modal-detail-copy" id="modal-details"></div>
       </div>
-      <div>
+      <div class="modal-takeaway-column">
         <h3>Engineering takeaway</h3>
         <p id="modal-takeaway"></p>
         <div class="tag-row" id="modal-tags"></div>
