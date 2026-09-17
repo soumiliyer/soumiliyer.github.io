@@ -367,3 +367,94 @@ button { font: inherit; }
   .modal-columns-detailed { grid-template-columns: 1fr; }
   .modal-takeaway-column { position: static; }
 }
+
+
+/* v8: project media, degree/certificate links, and credential presentation */
+.project-art-media::before,
+.project-art-media::after { display: none; }
+.project-art-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: var(--surface-2);
+}
+.project-art-media .art-label {
+  z-index: 2;
+  padding: 7px 9px;
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(12, 12, 10, .72);
+  backdrop-filter: blur(4px);
+  text-shadow: 0 1px 3px rgba(0,0,0,.25);
+}
+.modal-art.has-media {
+  height: min(420px, 42vw);
+  min-height: 230px;
+  background: var(--surface-2);
+}
+.modal-art.has-media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: var(--surface-2);
+}
+.modal-gallery {
+  margin: 10px 34px 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.modal-gallery[hidden] { display: none; }
+.media-item {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface-2);
+}
+.media-item a { display: block; }
+.media-item img,
+.media-item video {
+  display: block;
+  width: 100%;
+  height: 260px;
+  background: var(--surface-2);
+}
+.media-item img { object-position: center; }
+.media-item video { object-fit: contain; background: #0d0d0c; }
+.media-item figcaption {
+  padding: 10px 12px;
+  color: var(--muted);
+  font-size: .75rem;
+  line-height: 1.4;
+  border-top: 1px solid var(--line);
+}
+.inline-credential-link,
+.education-credential-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 45%, transparent);
+}
+.inline-credential-link:hover,
+.education-credential-link:hover {
+  color: var(--accent-strong);
+  border-bottom-color: currentColor;
+}
+.education-mini a {
+  color: var(--muted);
+  justify-self: end;
+}
+.certification-band a {
+  color: #e3dccd;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(227,220,205,.35);
+}
+.certification-band a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+@media (max-width: 720px) {
+  .modal-gallery { grid-template-columns: 1fr; margin-inline: 20px; }
+  .media-item img, .media-item video { height: auto; max-height: 340px; }
+  .education-mini a { justify-self: start; }
+}

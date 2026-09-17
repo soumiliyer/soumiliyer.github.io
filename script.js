@@ -39,7 +39,9 @@ const projects = [
       "Before analyzing the response, I performed a power analysis at α = 0.05, assuming a 5 N/mm² minimum detectable effect and a 3 N/mm² within-cell standard deviation; the two-replicate design produced approximately 0.83 statistical power. I then fit a general linear model/ANOVA. The overall model was significant at p = 0.006; all three main effects were significant while the interactions were not. The modeled effects were approximately +6.90 N/mm² for temperature, +5.459 N/mm² for cooling rate, and +3.364 N/mm² for paste volume, and the factorial structure produced VIF = 1.00, confirming orthogonality. I used Pareto charts, main-effects plots, interaction plots, and four-in-one residual diagnostics to check the model before recommending the modeled high-setting combination of 260°C, 1.0 mg, and 4°C/s. The project used simulated data, which I explicitly documented rather than presenting the study as a physically conducted soldering experiment."
     ],
     "takeaway": "This project connects experimental design, statistical validation, process windows, and data-backed manufacturing decisions while being explicit about the use of simulated data.",
-    "report": "docs/IE533_Solder_DOE_Report.pdf"
+    "report": "docs/IE533_Solder_DOE_Report.pdf",
+    "media": [],
+    "links": []
   },
   {
     "id": "senior-design",
@@ -81,7 +83,31 @@ const projects = [
       "The design was iterated through CAD models and 3D-printed prototypes rather than treated as a single final concept. User feedback led to an enlarged ribbed grip for better control, a retention strap, and a detachable stainless-steel spoon head. We then validated the physical prototype through 2 m drop tests, repeated dishwasher exposure, and insertion/removal-force testing of the detachable interface to make sure the usability changes had not compromised durability. The resulting prototype remained functional while staying below a $25 target cost, providing a substantially lower-cost mechanical alternative to commercially available electronic stabilization products."
     ],
     "takeaway": "A full product-development cycle: user requirements, mechanism selection, CAD, rapid prototyping, iterative refinement, durability testing, usability validation, and cost control.",
-    "report": null
+    "report": "docs/Senior_Design_Assisted_Eating_Utensil_Report.pdf",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/senior-design/cad-model.jpg",
+        "alt": "CAD model of the final assisted eating utensil prototype",
+        "caption": "CAD model of the final prototype",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/senior-design/final-prototype-diagram.png",
+        "alt": "Annotated diagram of the final assisted eating utensil prototype",
+        "caption": "Final prototype with wrist strap, finger strap, stabilization tab, and stainless-steel spoon",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/senior-design/project-poster.jpg",
+        "alt": "Senior design project poster for the assisted eating utensil",
+        "caption": "Senior design project poster",
+        "fit": "contain"
+      }
+    ],
+    "links": []
   },
   {
     "id": "robot-control",
@@ -125,7 +151,22 @@ const projects = [
       "Those models were incorporated into MATLAB/Simulink with finite-state logic for rest, racing/line following, line recovery, and parking, along with encoder feedback, PID/PI control, sensor-based transitions, and friction compensation. My specific contribution was the motor speed-difference controller, which I designed using MATLAB root-locus techniques so lateral tracking error could be translated into the relative wheel-speed correction needed to steer the robot back toward the line. The project therefore went through the complete controls workflow of hardware characterization, sensor calibration, system identification, controller design, simulation, integration, and physical testing rather than beginning directly with trial-and-error gain tuning."
     ],
     "takeaway": "A complete controls workflow from measured hardware behavior to models, controller design, finite-state integration, and physical validation—with my direct contribution centered on root-locus wheel-speed correction.",
-    "report": "docs/ME375_Autonomous_Robot_Report.pdf"
+    "report": "docs/ME375_Autonomous_Robot_Report.pdf",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/robot-control/robot-course-still.jpg",
+        "alt": "Autonomous robot following the line course during testing",
+        "caption": "Robot during autonomous line-following testing",
+        "fit": "cover"
+      },
+      {
+        "type": "video",
+        "src": "assets/projects/robot-control/robot-course-demo.mp4",
+        "caption": "Video: autonomous robot following the course"
+      }
+    ],
+    "links": []
   },
   {
     "id": "wind-tunnel",
@@ -169,7 +210,38 @@ const projects = [
       "The important result was the trend rather than simply the maximum force value. Cₗ increased through 40°, where it peaked at approximately 0.65, then declined while Cᴅ continued to increase, indicating the onset of flow separation and diminishing aerodynamic return beyond that region. We also documented limitations including the single test speed, simplified vehicle geometry, ground-plane/frontal-area assumptions, and an approximately 2 mm print shift in the vehicle model that could have changed local airflow. The project combined CAD, additive manufacturing, instrumentation, calibration, MATLAB data reduction, uncertainty analysis, and physical interpretation."
     ],
     "takeaway": "The project demonstrates how I move from CAD and fabrication through instrument calibration, repeated testing, MATLAB reduction, uncertainty, and engineering interpretation of a physical system.",
-    "report": "docs/ME30801_Wind_Tunnel_Spoiler_Report.pdf"
+    "report": "docs/ME30801_Wind_Tunnel_Spoiler_Report.pdf",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/wind-tunnel/model-in-test-section.png",
+        "alt": "3D-printed race-car model with adjustable rear spoiler installed in the wind-tunnel test section",
+        "caption": "Model installed in the wind-tunnel test section",
+        "fit": "cover"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/wind-tunnel/wind-tunnel-setup.png",
+        "alt": "Purdue low-speed wind tunnel used for spoiler lift and drag testing",
+        "caption": "Wind-tunnel experimental setup",
+        "fit": "cover"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/wind-tunnel/isometric-car-model.png",
+        "alt": "Isometric CAD view of the race-car model and adjustable spoiler",
+        "caption": "Isometric CAD view of the car model",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/wind-tunnel/side-view-car-model.png",
+        "alt": "Side CAD view of the race-car model and adjustable spoiler",
+        "caption": "Side CAD view showing the adjustable spoiler",
+        "fit": "contain"
+      }
+    ],
+    "links": []
   },
   {
     "id": "blanket-insulation",
@@ -211,7 +283,31 @@ const projects = [
       "We also compared the measured conductivities against reference values rather than presenting the calculations without validation. The resulting discrepancies were approximately 2.63% for polyester, 67.66% for wool, and 37.60% for down, which led us to document limitations in the simplifying assumptions, experimental repeatability, contact conditions, and number of trials. The project was therefore as much about understanding why an experimental result disagreed with a reference as it was about calculating thermal conductivity."
     ],
     "takeaway": "A thermal test-and-modeling project that emphasizes controlled experimentation, instrumentation, model validation, property estimation, and honest treatment of uncertainty and error.",
-    "report": "docs/ME315_Blanket_Insulation_Report.pdf"
+    "report": "docs/ME315_Blanket_Insulation_Report.pdf",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/blanket-insulation/material-samples.jpg",
+        "alt": "Polyester, wool, and down blanket samples used in the heat-transfer experiment",
+        "caption": "Polyester, wool, and down samples, left to right",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/blanket-insulation/experimental-setup.png",
+        "alt": "Diagram of the blanket insulation experimental setup with thermocouples and epoxy resin block",
+        "caption": "Experimental setup and thermocouple placement",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/blanket-insulation/thermal-schematic.png",
+        "alt": "Thermal schematic of convection from the cooler and heat flow through the blanket and epoxy plate",
+        "caption": "Simplified thermal model used for analysis",
+        "fit": "contain"
+      }
+    ],
+    "links": []
   },
   {
     "id": "audio-equalizer",
@@ -254,7 +350,105 @@ const projects = [
       "Before the power-amplifier stage, the maximum measured output was 96.7 mV RMS versus 100 mV expected, corresponding to 3.30% error. The LM386 then provided approximately 20× gain, and the final circuit produced approximately 605 mW, exceeding the 400 mW design requirement. The discrepancies between theoretical and measured behavior also gave me experience tracing real circuit performance back to component tolerance, wiring resistance, breadboard behavior, and measurement uncertainty."
     ],
     "takeaway": "The project connects circuit theory to physical hardware through design calculations, simulation, breadboarding, oscilloscope/FRA measurements, debugging, and measured performance validation.",
-    "report": "docs/ECE20007_Audio_Equalizer_Report.pdf"
+    "report": "docs/ECE20007_Audio_Equalizer_Report.pdf",
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/audio-equalizer/breadboard-circuit.jpg",
+        "alt": "Breadboard implementation of the four-stage audio equalizer circuit",
+        "caption": "Breadboard implementation of the audio equalizer",
+        "fit": "cover"
+      }
+    ],
+    "links": []
+  },
+  {
+    "id": "foldable-hanger",
+    "title": "Foldable Travel Hanger",
+    "course": "ME 263 · Mechanical Engineering Design",
+    "categories": [
+      "design",
+      "manufacturing"
+    ],
+    "label": "Mechanical Design / Prototyping",
+    "summary": "Developed a compact foldable clothes hanger by translating user needs into design requirements, modeling the mechanism in Siemens NX, and validating the concept with a 3D-printed prototype.",
+    "tags": [
+      "Siemens NX",
+      "3D Printing",
+      "Design Process",
+      "Prototyping",
+      "DFM"
+    ],
+    "metrics": [
+      [
+        "4-person",
+        "design team"
+      ],
+      [
+        "12 lb",
+        "load requirement"
+      ],
+      [
+        "< 19 in",
+        "length requirement"
+      ],
+      [
+        "~1/4",
+        "folded footprint"
+      ]
+    ],
+    "details": [
+      "In a four-person mechanical design team, I helped develop a more portable clothes hanger for users who needed to store or travel with clothing without forcing a conventional rigid hanger through tight necklines. We began with market and user research, functional decomposition, benchmark comparisons, and concept generation so the design was driven by specific needs rather than by CAD alone. The quantitative requirements included withstanding a 12 lb load without fracture, folding to less than half of its original length, and remaining under 19 inches long, while qualitative requirements emphasized durability, recyclability, usability, and the ability to fit easily into luggage.",
+      "After evaluating concepts, we developed a hinged architecture in which the hook, central body, and side arms could fold into a compact configuration. I converted the selected concept into Siemens NX part and assembly models, using the CAD geometry to check fit, clearances, and the folding sequence before physical fabrication. The final configuration reduced the hanger to roughly one-quarter of its open footprint for travel while retaining the basic geometry needed to support clothing.",
+      "We then 3D-printed the components and assembled a working prototype to validate the folding mechanism and the interfaces between the printed parts. That build-test cycle let us identify where the digital concept translated cleanly to hardware and where hinge geometry, component fit, or assembly details needed refinement. The project gave me early experience taking a product from user need and benchmark research through requirements, concept selection, CAD, additive manufacturing, assembly, and physical validation."
+    ],
+    "takeaway": "A complete early-stage product-development project that moved from user research and measurable requirements through NX modeling, additive manufacturing, assembly, and physical validation.",
+    "report": null,
+    "media": [
+      {
+        "type": "image",
+        "src": "assets/projects/foldable-hanger/prototype.jpg",
+        "alt": "3D-printed foldable travel hanger prototype",
+        "caption": "Assembled 3D-printed prototype",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/foldable-hanger/cad-drawing.png",
+        "alt": "Engineering drawing of the foldable travel hanger",
+        "caption": "Siemens NX engineering drawing",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/foldable-hanger/folded-view.png",
+        "alt": "Front CAD view of the foldable hanger in a folded configuration",
+        "caption": "Folded configuration",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/foldable-hanger/folded-view-2.png",
+        "alt": "Side CAD view of the folded hanger",
+        "caption": "Alternate folded view",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/foldable-hanger/folding-view.gif",
+        "alt": "CAD visualization of the foldable hanger mechanism",
+        "caption": "Folding mechanism visualization",
+        "fit": "contain"
+      },
+      {
+        "type": "image",
+        "src": "assets/projects/foldable-hanger/project-poster.webp",
+        "alt": "Mechanical design project poster for the foldable travel hanger",
+        "caption": "Project poster",
+        "fit": "contain"
+      }
+    ],
+    "links": []
   },
   {
     "id": "vip-rover",
@@ -296,7 +490,9 @@ const projects = [
       "I supported rover functionality and integration around autonomous navigation concepts including visual/object detection, infrared sensing, LiDAR, and coordination between hardware and software. I also contributed to Python machine-learning work in Google Colab, where a CIFAR-10 image-classification model reached 78.74% accuracy after 10 epochs. We documented potential follow-on experiments using ResNet-18, ResNet-34, and ResNet-50 architectures. The project gave me early experience working across mechanical hardware, sensing, software integration, computer vision, and machine learning rather than treating each discipline as an isolated task."
     ],
     "takeaway": "An early multidisciplinary autonomy project that exposed me to the interfaces between mechanical hardware, sensing, software integration, computer vision, and machine learning.",
-    "report": null
+    "report": null,
+    "media": [],
+    "links": []
   },
   {
     "id": "natural-catalysts",
@@ -336,7 +532,9 @@ const projects = [
       "Once V₀ had been extracted, we used Lineweaver–Burk linearization with MATLAB polyfit and polyval to calculate Vmax and Km across all five enzymes and their duplicate datasets. We validated the original parameter-identification method against PGO-X50 reference values; it produced approximately 4.3% error in Vmax and 1.1% error in Km before later refinements were evaluated. The final workflow scaled the same process across the full dataset and generated technical plots and error analyses that we converted into a client-facing brief. The important engineering lesson was not only writing MATLAB code, but building a repeatable method for turning noisy experimental data into parameter estimates and then communicating how much confidence a client should place in those results."
     ],
     "takeaway": "A data-analysis project focused on building a repeatable algorithm, validating its error, scaling it across a full dataset, and communicating the result responsibly to a client.",
-    "report": "docs/ENGR132_NaturalCatalysts_Technical_Brief.pdf"
+    "report": "docs/ENGR132_NaturalCatalysts_Technical_Brief.pdf",
+    "media": [],
+    "links": []
   },
   {
     "id": "little-blazer",
@@ -376,7 +574,14 @@ const projects = [
       "After completing the individual components, I built the engine as a multi-part NX assembly using geometric and assembly constraints to reproduce the intended interfaces and mechanical relationships between parts. I then inspected fit, alignment, and component relationships throughout the assembly to identify modeling or constraint errors. The project was one of my first substantial experiences moving from engineering drawings to a structured parametric assembly and helped establish the Siemens NX workflow I later used in more advanced mechanical-design projects."
     ],
     "takeaway": "Foundational CAD work that strengthened drawing interpretation, parametric modeling, assembly constraints, interface checking, and multi-part model organization.",
-    "report": null
+    "report": null,
+    "links": [
+      {
+        "label": "Watch assembly demonstration",
+        "href": "https://www.youtube.com/watch?v=u_yxFbJ2E08"
+      }
+    ],
+    "media": []
   },
   {
     "id": "campus-safety",
@@ -419,7 +624,9 @@ const projects = [
       "We then refined the concept into a strategically spaced HDPE barrier system separating pedestrian and bike traffic. Iterations addressed barrier spacing, material choice, Purdue-themed visibility, reflective/biomimicry-inspired features, winter operation, cost, maintenance, and interference with traffic flow. The project was an early example of the same engineering process I use now: define the problem with data, translate stakeholder needs into measurable criteria, generate alternatives, test them, quantify tradeoffs, and use the results to justify a final design."
     ],
     "takeaway": "A full human-centered design cycle driven by quantified stakeholder need, concept comparison, simulation/prototyping, weighted tradeoffs, and iterative refinement.",
-    "report": "docs/ENGR131_Campus_Safety_Design_Report.pdf"
+    "report": "docs/ENGR131_Campus_Safety_Design_Report.pdf",
+    "media": [],
+    "links": []
   }
 ];
 
@@ -445,8 +652,12 @@ function renderProjects(filter = 'all') {
     card.setAttribute('role', 'button');
     card.setAttribute('aria-label', `Open details for ${project.title}`);
     card.dataset.projectId = project.id;
+    const heroImage = (project.media || []).find(item => item.type === 'image');
+    const art = heroImage
+      ? `<div class="project-art project-art-media"><img src="${heroImage.src}" alt="${heroImage.alt || ''}" loading="lazy" style="object-fit:${heroImage.fit || 'cover'}"><span class="art-label">${project.label}</span></div>`
+      : `<div class="project-art" style="--art-bg:${artColor(index)}"><span class="art-label">${project.label}</span></div>`;
     card.innerHTML = `
-      <div class="project-art" style="--art-bg:${artColor(index)}"><span class="art-label">${project.label}</span></div>
+      ${art}
       <div class="project-card-body">
         <h3>${project.title}</h3>
         <p class="project-course">${project.course}</p>
@@ -475,16 +686,58 @@ function openProject(project) {
   document.getElementById('modal-title').textContent = project.title;
   document.getElementById('modal-kicker').textContent = project.course;
   document.getElementById('modal-summary').textContent = project.summary;
-  document.getElementById('modal-art').style.background = `linear-gradient(135deg, ${artColor(projects.indexOf(project))}, var(--surface-2))`;
+
+  const hero = document.getElementById('modal-art');
+  const heroImage = (project.media || []).find(item => item.type === 'image');
+  if (heroImage) {
+    hero.classList.add('has-media');
+    hero.innerHTML = `<img src="${heroImage.src}" alt="${heroImage.alt || ''}" style="object-fit:${heroImage.fit || 'cover'}">`;
+    hero.style.background = '';
+  } else {
+    hero.classList.remove('has-media');
+    hero.innerHTML = '';
+    hero.style.background = `linear-gradient(135deg, ${artColor(projects.indexOf(project))}, var(--surface-2))`;
+  }
+
+  const gallery = document.getElementById('modal-gallery');
+  const media = project.media || [];
+  const galleryMedia = heroImage ? media.filter(item => item !== heroImage) : media;
+  gallery.innerHTML = galleryMedia.length
+    ? galleryMedia.map(item => {
+        if (item.type === 'video') {
+          return `<figure class="media-item media-video">
+            <video controls playsinline preload="metadata">
+              <source src="${item.src}" type="video/mp4">
+              Your browser does not support embedded video.
+            </video>
+            ${item.caption ? `<figcaption>${item.caption}</figcaption>` : ''}
+          </figure>`;
+        }
+        return `<figure class="media-item">
+          <a href="${item.src}" target="_blank" rel="noopener" aria-label="Open ${item.caption || 'project image'} full size">
+            <img src="${item.src}" alt="${item.alt || ''}" loading="lazy" style="object-fit:${item.fit || 'cover'}">
+          </a>
+          ${item.caption ? `<figcaption>${item.caption}</figcaption>` : ''}
+        </figure>`;
+      }).join('')
+    : '';
+  gallery.hidden = !galleryMedia.length;
+
   document.getElementById('modal-metrics').innerHTML = project.metrics.map(([value,label]) => `<div><strong>${value}</strong><span>${label}</span></div>`).join('');
   document.getElementById('modal-details').innerHTML = project.details.map(paragraph => `<p>${paragraph}</p>`).join('');
   document.getElementById('modal-takeaway').textContent = project.takeaway;
   document.getElementById('modal-tags').innerHTML = project.tags.map(tag => `<span>${tag}</span>`).join('');
+
   const actions = document.getElementById('modal-actions');
-  actions.innerHTML = project.report
-    ? `<a class="button button-primary" href="${project.report}" target="_blank" rel="noopener">View project report ↗</a><button class="button button-secondary" type="button" data-close-modal>Close</button>`
-    : `<button class="button button-primary" type="button" data-close-modal>Close project</button>`;
+  const actionLinks = [];
+  if (project.report) actionLinks.push(`<a class="button button-primary" href="${project.report}" target="_blank" rel="noopener">View project report ↗</a>`);
+  (project.links || []).forEach(link => {
+    actionLinks.push(`<a class="button ${actionLinks.length ? 'button-secondary' : 'button-primary'}" href="${link.href}" target="_blank" rel="noopener">${link.label} ↗</a>`);
+  });
+  actionLinks.push(`<button class="button button-secondary" type="button" data-close-modal>Close</button>`);
+  actions.innerHTML = actionLinks.join('');
   actions.querySelectorAll('[data-close-modal]').forEach(btn => btn.addEventListener('click', () => modal.close()));
+
   modal.showModal();
   document.body.classList.add('modal-open');
 }
