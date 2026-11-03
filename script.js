@@ -627,6 +627,48 @@ const projects = [
     "report": "docs/ENGR131_Campus_Safety_Design_Report.pdf",
     "media": [],
     "links": []
+  },
+  {
+    "id": "ceramic-tile-vsm",
+    "title": "Ceramic Tile Value Stream Mapping",
+    "course": "MSE 535 · Lean Manufacturing",
+    "categories": [
+      "manufacturing",
+      "data"
+    ],
+    "label": "Lean Manufacturing / VSM",
+    "summary": "Mapped a ceramic tile production line and proposed dedicated dry granulation lines and FIFO lanes to reduce inventory delays and shorten modeled lead time.",
+    "tags": [
+      "Value Stream Mapping",
+      "Lean Manufacturing",
+      "FIFO",
+      "Process Improvement"
+    ],
+    "metrics": [
+      [
+        "~23 days",
+        "current-state lead time"
+      ],
+      [
+        "~20.5 days",
+        "projected future-state lead time"
+      ],
+      [
+        "18 → 17 h",
+        "modeled processing time"
+      ],
+      [
+        "2",
+        "proposed dedicated clay lines"
+      ]
+    ],
+    "details": [
+      "In this team course case study, we mapped the material and information flow from raw material storage through granulation, pressing, glazing, firing, packing, and shipping. The current-state map showed about 23 days of lead time against 18 hours of processing, with substantial waiting in raw material and finished goods inventory and a buffer at the granule silos.",
+      "I presented the future-state map, which proposed dedicated continuous dry granulation lines for red and white clay and FIFO lanes in place of the granule silo buffer. The proposed configuration reduced modeled lead time to about 20.5 days and processing time to about 17 hours. These figures are projections from the case study; the changes were not implemented on a production line."
+    ],
+    "takeaway": "Value stream mapping made it possible to distinguish processing time from inventory delays and compare the expected effects of a proposed process redesign.",
+    "media": [],
+    "links": []
   }
 ];
 
@@ -640,9 +682,29 @@ function artColor(index) {
   return palettes[index % palettes.length];
 }
 
+const allProjectOrder = [
+  'senior-design',
+  'foldable-hanger',
+  'robot-control',
+  'wind-tunnel',
+  'blanket-insulation',
+  'solder-doe',
+  'ceramic-tile-vsm',
+  'vip-rover',
+  'audio-equalizer',
+  'little-blazer',
+  'natural-catalysts',
+  'campus-safety',
+];
+const projectsById = new Map(projects.map(project => [project.id, project]));
+
 function renderProjects(filter = 'all') {
   projectGrid.innerHTML = '';
-  projects.forEach((project, index) => {
+  const displayProjects = filter === 'all'
+    ? allProjectOrder.map(id => projectsById.get(id))
+    : projects;
+  displayProjects.forEach(project => {
+    const index = projects.indexOf(project);
     const visible = filter === 'all' || project.categories.includes(filter);
     const card = document.createElement('article');
     card.className = 'project-card reveal';
